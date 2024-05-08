@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Brands from "./Brands";
 import Insights from "./Insights";
 import ImageSlider from "./ImageSlider";
+import MultipleImageSlider from "./MultipleImageSLider";
 
 export default function Home() {
   const images = [
@@ -13,7 +14,6 @@ export default function Home() {
     "https://www.ombrulla.com/_astro/terranz-other.fe41f67d_Z1IrlCC.webp",
     "https://www.ombrulla.com/_astro/shipcom.ee1ba5d2_o18LH.webp",
     "https://www.ombrulla.com/_astro/wild-leaf.85d7f76f_Z1vakWD.webp",
-    // Add more image URLs as needed
   ];
   return (
     <div className="main">
@@ -48,8 +48,8 @@ export default function Home() {
                 src="https://www.ombrulla.com/_astro/ai-visual-inspection_banner_1.f3232628_ZyIKMH.webp"
                 alt="AI visual inspection"
                 className="image-mask"
-                width="800"
-                height="400"
+                width="600"
+                height="800"
                 loading="lazy"
                 decoding="async"
               />
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="center3">
+        <div className="center3 pl-10">
 
           <div className="center3F">
             <div><ul className="ulB">
@@ -110,10 +110,10 @@ export default function Home() {
               <p className="pP">Enhancing quality through AI-based visual inspection</p>
             </div>
             <div className="flex">
-              <p className="text-left">Ombrulla transforms quality control across manufacturing and various sectors through its AI-driven defect detection system, replacing traditional visual inspection. This AI visual inspection not only eradicates human errors and delays but also elevates precision, culminating in a streamlined and accurate quality control process.</p>
+              <p className="text-left text-justify">Ombrulla transforms quality control across manufacturing and various sectors through its AI-driven defect detection system, replacing traditional visual inspection. This AI visual inspection not only eradicates human errors and delays but also elevates precision, culminating in a streamlined and accurate quality control process.</p>
             </div>
             <div className="flex">
-              <ul className="flex flex-col text-left">
+              <ul className="flex flex-col text-left mt-5">
                 <li>AI visual inspection ensures consistent performance with unmatched accuracy</li>
                 <li>It boosts throughput and cuts down on labour expenses</li>
                 <li>By minimizing recalls and rework, AI inspection enhances brand reputation</li>
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
           <div className="center3S">
             <div className="center3Fimage">
-              <img src="https://www.ombrulla.com/_astro/ai-food2.7e761c87_TNwbv.webp" alt="" />
+              <img src="https://www.ombrulla.com/_astro/ai-food2.7e761c87_TNwbv.webp" className="rounded-md" height={500} width={500} alt="" />
             </div>
           </div>
 
@@ -170,9 +170,9 @@ export default function Home() {
           <div className="w-full sm:w-2/4 p-10 mt-5 pl-50px">
             <p className="font-bold text-xl text-left text-white">PETRAN</p>
             <p className="text-left text-white">PErformance - TRacking - ANalytics</p>
-            <h1 className="text-3xl sm:text-5xl font-medium text-left mt-3 sm:mt-5 text-white">AIoT Enabled Asset
+            <h1 className="text-3xl sm:text-4xl font-medium text-left mt-3 sm:mt-5 text-white">AIoT Enabled Asset <br />
               Performance Management Software</h1>
-            <p className="mt-3 sm:mt-5 text-left text-white">PETRAN offers an Asset Management software (APM) that harnesses the power of artificial intelligence and the Internet of Things (IoT) to empower data-driven decision-making and enable predictive maintenance and operational equipment effectiveness</p>
+            <p className="mt-3 sm:mt-10 text-left text-white ">PETRAN offers an Asset Management software (APM) that harnesses the power of artificial intelligence and the Internet of Things (IoT) to empower data-driven decision-making and enable predictive maintenance and operational equipment effectiveness</p>
             <div className="callIcons">
               <div>
                 <button className="callBtn">Schedule Call</button>
@@ -220,6 +220,7 @@ export default function Home() {
         </div>
 
       </div>
+      <MultipleImageSlider />
       <ImageSlider />
       <Brands />
       <Insights />

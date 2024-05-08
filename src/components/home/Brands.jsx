@@ -1,5 +1,4 @@
 import React from "react";
-import '../home/Brands.css';
 
 export default function Brands() {
     return (

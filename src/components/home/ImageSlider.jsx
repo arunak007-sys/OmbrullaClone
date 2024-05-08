@@ -1,45 +1,71 @@
-import React from "react";
-import {files} from '../home/SlideFiles.js'
-import Slider from "react-slick"
+import React, { useRef, useEffect } from "react";
+import { files } from '../home/SlideFiles.js';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { RiDoubleQuotesL } from "react-icons/ri";
 
-export default function ImageSlider(){
+export default function ImageSlider() {
+    const sliderRef = useRef(null);
+
+    useEffect(() => {
+        const slider = sliderRef.current;
+
+        const interval = setInterval(() => {
+            if (slider) {
+                slider.slickNext(); 
+            }
+        }, 3000); 
+
+        return () => clearInterval(interval);
+    }, []);
+
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 2,
-        slidesToScroll: 1
-      };
-    return(
-        <div className="w-full m-auto bg-blue-950 h-screen flex justify-center aligns-center flex-col">
-            <div className="w-full text-left mt-10 ml-10"><p className="text-white font-bold">OUR TESTIMONIALS</p></div>
-            <div className="w-full text-left mt-5 ml-10"><p className="text-4xl text-white">What Customers Say About Us</p></div>
-            <div className="w-3/4 m-auto">
-            <div className="mt-20 ">
-            <Slider {...settings}>
-        {
-            files.map((d) => (
-                <div className="bg-white h-[450px] text-black rounded-xl">
-                    <div className="flex flex-col justify-center items-center gap-4 p-4">
-                    
-                    <p className="text-justify text-gray-500">{d.description}</p>
-                    </div>
-                    <div className="h-56 rounded-t-xl bg-gray-200 flex justify-center items-center">
-                        <img src={d.image} alt=""  className="h-44 w-44 rounded-full"/>
-                        <div className="ml-5">
-                        <p className="text-xl font-semibold ">{d.name}</p>
-                        <p className="text-blue-300 text-xl ">{d.location}</p>
-                        </div>
-                    </div>
+        slidesToScroll: 1,
+        autoplay: false, 
+        arrows: false, 
+        pauseOnHover: true, 
+        responsive: [
+            {
+                breakpoint: 768, 
+                settings: {
+                    slidesToShow: 1 
+                }
+            }
+        ]
+    };
 
-                </div>
-            ))
-        }
-        </Slider>
+    return (
+        <div className="bg-blue-950 min-h-screen flex justify-center items-center flex-col">
+            <div className="text-white font-bold text-left mt-10 ml-10 sm:text-center">
+                <p className="text-lg sm:text-3xl md:text-xl">OUR TESTIMONIALS</p>
+            </div>
+            <div className="text-white text-left mt-5 ml-10 sm:text-center">
+                <p className="text-2xl sm:text-4xl md:text-5xl">What Customers Say About Us</p>
+            </div>
+            <div className="w-3/4 mt-20">
+                <Slider ref={sliderRef} {...settings}>
+                    {files.map((d, index) => (
+                        <div key={index} className="bg-white text-black rounded-xl pt-5">
+                            <div className="flex flex-col justify-center items-center gap-4 p-4">
+                                <div className="w-full"><RiDoubleQuotesL className="text-blue-700 text-4xl" /></div>
+                                <p className="text-gray-500 text-center">{d.description}</p>
+                            </div>
+                            <div className="h-56 bg-gray-200 flex justify-center items-center ">
+                                <img src={d.image} alt="" className="h-32 w-32 rounded-full" />
+                                <div className="ml-3">
+                                    <p className="text-lg font-semibold">{d.name}</p>
+                                    <p className="text-blue-300 text-lg">{d.location}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </div>
-        </div>
-    )
+    );
 }

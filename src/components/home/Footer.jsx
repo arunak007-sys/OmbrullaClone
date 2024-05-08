@@ -68,13 +68,13 @@ export default function Footer() {
       </div>
       <div className="text-white  justify-center items-center text-2xl ftt ">
         <div className="ecter">
-        <FaFacebook />
-        <FaInstagram />
-        <FaTwitter />
-        <FaLinkedinIn />
-        <FaYoutube />
+          <FaFacebook />
+          <FaInstagram />
+          <FaTwitter />
+          <FaLinkedinIn />
+          <FaYoutube />
         </div>
-</div>
+      </div>
     </div>
   );
 }

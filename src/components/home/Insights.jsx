@@ -13,9 +13,7 @@ export default function Insights() {
             <hr className="mt-8" />
 
             <div className="w-full mt-5 md:mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {/* Grid layout with 1 column on small screens and up to 3 columns on larger screens */}
 
-                {/* Card 1 */}
                 <div className="p-5">
                     <img className="rounded-xl mb-5" src="https://blog.ombrulla.com/wp-content/uploads/2024/04/AI-Visual-Inspection-in-Maritime-Industry.png" alt="" />
 

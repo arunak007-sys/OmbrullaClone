@@ -138,9 +138,11 @@ p{
     .leftHeader2 {
       text-align: center;
       width: 100%;
+      padding: 20px;
     }
     .rightHeader2{
         width: 100%;
+        padding: 20px;
     }
     .header2{
         display: flex;
@@ -197,17 +199,6 @@ p{
         display: flex;
         flex-direction: row;
     }
-    .center2 {
-        flex-direction: column; 
-        align-items: center; 
-      }
-    
-      .center2F,
-      .center2S,
-      .center2T {
-        width: 100%; 
-        margin-bottom: 20px; 
-      }
   }
 
   .centerIm1{
@@ -248,10 +239,123 @@ p{
   .center2{
     display: flex;
     flex-direction: row;
-    margin-top:20px ;
+    margin-top:20px;
     height: 100%;
     width: 100%;
     justify-content: space-evenly;
+    margin-top: 80px;
   }
-  
-  
+  @media (max-width: 768px){
+    .center1,.centerIm1{
+      overflow: hidden;
+    }
+  }
+
+  @media (max-width: 768px){
+    .center2 {
+      margin-top: 300px;
+      display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        align-items: center;
+      }
+    
+      .center2F{
+        width: 400px; 
+        margin-bottom: 20px; 
+        padding: 20px;
+        overflow: hidden;
+      }
+      .text-5xl{
+        font-size: 16px;
+      }
+      .svgDots{
+        height: 10px;
+      }
+      .leading-tight{
+        font-size: 48px;
+      }
+      .cardTexts{
+        font-size: 16px;
+      }
+      .center2S{
+        padding: 20px;
+        width: 400px; 
+        margin-bottom: 20px; 
+        overflow: hidden;
+      }
+      .center2T{
+        width: 100%; 
+        margin-bottom: 20px; 
+        padding: 20px;
+        overflow: hidden;
+  }
+  .h4Ab{
+    font-size: 24px;
+  }
+  .divAbscd{
+    width: 400px;
+  }
+  .pass{
+    font-size: 16px;
+  }
+}
+
+.center3{
+display: flex;
+flex-direction: row;
+}
+.center3Fimage{
+  border-radius: 20px;
+    height: 500px;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.center3F{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 20px;
+}
+.center3S{
+  width: 50%;
+}
+.ulB{
+  list-style-type: square;
+  font-size: 15px;
+  font-weight: bold;
+}
+.pP{
+  font-size: 45px;
+  text-align: left;
+}
+
+@media (max-width: 768px){
+.center3{
+  display: flex;
+  flex-direction: column;
+}
+.center3F{
+  width: 100%;
+  padding: 20px;
+}
+.center3S{
+  width: 100%;
+  padding: 20px;
+}
+}
+
+.abq{
+  width: 100%;
+  height: 622px;
+  background-image: url('https://wptf.themepul.co/tronix/wp-content/uploads/2023/06/Mask-group-1.jpg');
+}
+.hedw{
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
